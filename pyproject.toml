@@ -1,0 +1,41 @@
+[tool.poetry]
+name = "whisperX"
+version = "0.1.0"
+description = ""
+authors = ["Your Name <you@example.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+
+
+[tool.poetry.group.dev.dependencies]
+ruff = "^0.1.3"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.ruff]
+
+select = [
+    "E",    # pycodestyle errors
+    "W",    # pycodestyle warnings
+    "F",    # pyflakes
+    "I",    # isort
+    "C",    # flake8-comprehensions
+    "B",    # flake8-bugbear
+    "UP",   # pyupgrade
+    "YTT",  # flake8-2020
+]
+
+ignore = [
+    "E501", # Avoid enforcing line-length violations
+]
+
+unfixable = [
+    "E501", # Avoid enforcing line-length violations
+    "F401", # imported but unused
+    "F841", # Local variable is assigned to but never used
+]
+
+target-version = "py39"
